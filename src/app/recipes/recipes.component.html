@@ -1,28 +1,25 @@
 
 <div class="row">
   <!--Left pane of the page-->
-     <div class="col-md-5">
-       <h6> Recipes Component</h6>
-
-
-       <h6> Left pane of the page Recipes Component </h6>
-
-       <app-recipe-list
-       (recipewasSelected)="selctedRecipe = $event"></app-recipe-list>
-
-     </div>
-
+  <div class="col-md-5">
+    <h6> Recipes Component</h6>
+    <h6> Left pane of the page Recipes Component </h6>
+    <app-recipe-list
+      (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list>
+  </div>
   <!--Right pane of the page-->
+  <h6> Right pane of the page Recipes Component </h6>
+  <div class="col-md-7">
 
-       <div class="col-md-7">
-         <h6> Right pane of the page Recipes Component </h6>
-
-      <app-recipe-detail
-      >
+    <!--<p><b>Please Select a Recipe From Recipe List  </b></p>-->
+    <app-recipe-detail
+      *ngIf="selectedRecipe; else infoText"
+      [recipe]="selectedRecipe">
       </app-recipe-detail>
-        <ng-template #infoText>
-          <p><b>Please Select a Recipe From Recipe List  </b></p>
-        </ng-template>
-       </div>
+
+    <ng-template #infoText>
+      <p><b>Please Select a Recipe to show here!</b></p>
+    </ng-template>
+  </div>
 </div>
 

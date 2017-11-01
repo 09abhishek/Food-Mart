@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-xs-12">
     <h6> Recipe Details Component </h6>
+    <h2> Recipe Name : {{recipe.name }}</h2>
+    <br>
     <img
       [src]="recipe.imagePath"
       alt="{{ recipe.imagePath }}"
@@ -10,7 +12,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h2> Recipe Name : {{recipe.name }}</h2>
+
   </div>
 </div>
 <div class="=row">
@@ -26,7 +28,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
+   <b> Description : {{ recipe.description }}</b>
   </div>
 </div>
 <div class="row">

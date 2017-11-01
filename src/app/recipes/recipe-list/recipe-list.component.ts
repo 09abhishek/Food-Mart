@@ -8,7 +8,8 @@ import {Recipe} from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipewasSelected = new EventEmitter<Recipe>();
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe ('Chicken Briyani', 'Hydrabadi Chicken Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/chicken-biryani.jpg'),
     new Recipe ('Mutton Briyani', 'Masala Mutton Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/mutton-biryani.jpg'),
@@ -20,8 +21,8 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
   }
-  onRecipeSelected(recipeselected: Recipe) {
-    this.recipewasSelected.emit(recipeselected); //  space left to fill the value should be emitted.
+  onRecipeSelected(recipeSelected: Recipe) {
+    this.recipeWasSelected.emit(recipeSelected); //  space left to fill the value should be emitted.
 
   }
 
