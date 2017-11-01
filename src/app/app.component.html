@@ -1,0 +1,11 @@
+
+<div class="container">
+  <div class ="row">
+    <div class ="col-md-12">
+    <h6> Main App Component </h6>
+      <app-header (featureSelected)="onNavigate($event)"></app-header>
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+    </div>
+</div>
+</div>

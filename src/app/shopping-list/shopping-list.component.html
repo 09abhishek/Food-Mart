@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-10">
+    <h6> Shopping list Component </h6>
+
+    <app-shopping-edit></app-shopping-edit>
+    <hr>
+    <ul class="list-group">
+
+      <a
+        class="list-group-item" style=" : pointer" *ngFor="let obj of ingredients">
+        {{obj.name}} ({{obj.amount}})
+      </a>
+    </ul>
+  </div>
+</div>
