@@ -2,7 +2,8 @@
   <div class="col-xs-10">
     <h6> Shopping list Component </h6>
 
-    <app-shopping-edit></app-shopping-edit>
+    <app-shopping-edit
+    (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
     <hr>
     <ul class="list-group">
 

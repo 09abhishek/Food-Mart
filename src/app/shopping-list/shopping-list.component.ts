@@ -15,5 +15,11 @@ ingredients: Ingredient [] = [
 
   ngOnInit() {
   }
-
+  onIngredientAdded(ingredient: Ingredient) {
+    console.log('in shoppping list :' + ingredient);
+    this.ingredients.push(ingredient);
+  }
+  // onIngredeientDelete()
+  // console.log('In delete Ingredient');
+  // this.ingredients.pull();
 }
