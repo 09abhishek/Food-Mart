@@ -15,7 +15,7 @@ export class RecipeListComponent implements OnInit {
     new Recipe ('Mutton Briyani', 'Masala Mutton Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/mutton-biryani.jpg'),
     new Recipe ('Veg Briyani', 'Kashmiri Veg Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/veg-biryani.jpg'),
     new Recipe ('Pork Briyani', 'Tangy Pork Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/pork-briyani.jpg'),
-    new Recipe ('Fish Briyani', 'Tuna Fish Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/fish-briyani.jpg'),
+    new Recipe ('Fish Briyani', 'Tuna Fish Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/11/fish-briyani.jpg'),
   ];
   constructor() { }
 
