@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Recipe} from '../recipe.model';
+import {RecipeService} from '../recipe.service';
 
 
 @Component({
@@ -8,21 +9,14 @@ import {Recipe} from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+  recipes: Recipe[];
 
-  recipes: Recipe[] = [
-    new Recipe ('Chicken Briyani', 'Hydrabadi Chicken Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/chicken-biryani.jpg'),
-    new Recipe ('Mutton Briyani', 'Masala Mutton Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/mutton-biryani.jpg'),
-    new Recipe ('Veg Briyani', 'Kashmiri Veg Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/veg-biryani.jpg'),
-    new Recipe ('Pork Briyani', 'Tangy Pork Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/10/pork-briyani.jpg'),
-    new Recipe ('Fish Briyani', 'Tuna Fish Briyani', 'https://PriyaTour-Travels.000webhostapp.com/wp-content/uploads/2017/11/fish-briyani.jpg'),
-  ];
-  constructor() { }
+  constructor(private recipeServices: RecipeService) {
+
+  }
 
   ngOnInit() {
-  }
-  onRecipeSelected(recipeSelected: Recipe) {
-    this.recipeWasSelected.emit(recipeSelected); //  space left to fill the value should be emitted.
+    this.recipes = this.recipeServices.getRecipe()
 
   }
 
