@@ -1,12 +1,16 @@
 import {Recipe} from './recipe.model';
 import {EventEmitter, Injectable} from '@angular/core';
-import {Ingredient} from "../shared/ingredient.model";
-import {ShoppingListService} from "../shopping-list/shopping-list.service";
+import {Ingredient} from '../shared/ingredient.model';
+import {ShoppingListService} from '../shopping-list/shopping-list.service';
+
+
 @Injectable()
+
 export class RecipeService {
 
- public recipeSelected = new EventEmitter<Recipe>();
-  private recipe: Recipe[] = [
+  public recipeSelected = new EventEmitter<Recipe>();
+
+  private recipes: Recipe[] = [
     new Recipe (
       'Chicken Briyani',
       'Hydrabadi Chicken Briyani',
@@ -65,10 +69,10 @@ export class RecipeService {
   constructor(private slService: ShoppingListService) {}
 
   getRecipe() {
-    return this.recipe.slice();
+    return this.recipes.slice();
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
- this.slService.addIngredient(ingredients);
+    this.slService.addIngredients(ingredients);
   }
 }

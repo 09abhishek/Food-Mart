@@ -9,6 +9,8 @@ import {RecipeService} from "../recipe.service";
 })
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
+
+
   constructor(private recipeService: RecipeService) {
     console.log('recipe val' + this.recipe);
   }

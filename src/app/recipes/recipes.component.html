@@ -14,12 +14,12 @@
 <div class="jumbotron">
     <!--<p><b>Please Select a Recipe From Recipe List  </b></p>-->
     <app-recipe-detail
-      *ngIf="selectedRecipe; else infoText"
+      *ngIf="selectedRecipe; else NullText"
       [recipe]="selectedRecipe">
       </app-recipe-detail>
 </div>
 
-    <ng-template #infoText>
+    <ng-template #NullText>
       <p><b>Please Select a Recipe to show here!</b></p>
     </ng-template>
   </div>

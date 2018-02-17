@@ -11,12 +11,13 @@ import {RecipeService} from '../recipe.service';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
 
-  constructor(private recipeServices: RecipeService) {
+// INJECTING RECIPE SERVICES NO NEED TO ADD PROVIDERS CAUSE WE HAVE ALREADY INCLUDED IN THE PARENT COMPONENT
+  constructor(private recipeService: RecipeService) {
 
   }
 
   ngOnInit() {
-    this.recipes = this.recipeServices.getRecipe()
+    this.recipes = this.recipeService.getRecipe()
 
   }
 
