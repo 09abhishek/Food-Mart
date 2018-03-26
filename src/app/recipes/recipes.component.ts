@@ -16,13 +16,7 @@ selectedRecipe: Recipe;
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    this.recipeService.recipeSelected
-      .subscribe(
-        //ES6 arrow function {arguments list} => {Body}
-        (recipe: Recipe) => {
-          this.selectedRecipe = recipe;
-        }
-        );
+
   }
 
 }

@@ -1,16 +1,30 @@
 <div class="row">
-  <div class="col-xs-12">
-    <h6> Recipe List Component </h6>
-    <button class="btn btn-success">New Recipe</button>
-  </div>
+    <div class="col-xs-12">
+        <h6> Recipe List Component </h6>
+
+        <div class="text-info">
+            <h3>Create a new Recipe</h3>
+            <br>
+        </div>
+        <!-- New recipe button on the recipe component page-->
+        <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
+    </div>
 </div>
-<hr>
+
 <div class="row">
-  <div class="col-xs-12">
-    <app-recipe-item
-      *ngFor="let recipeElement of recipes"
-      [recipe]= "recipeElement">
-    </app-recipe-item>
-  </div>
+    <div class="col-xs-12 text-info">
+        <h3>Recipe Menu</h3>
+        <br>
+    </div>
+    <div class="col-xs-12">
+        <!--Here we are binding the index of recipies
+         arraty to the [index] for the dynamic routing
+         segment in the recipe list component html-->
+        <app-recipe-item
+                *ngFor="let recipeElement of recipes; let i = index"
+                [recipe]="recipeElement"
+                [index]="i">
+        </app-recipe-item>
+    </div>
 </div>
 <!--[src]=" obj.imagePath"-->

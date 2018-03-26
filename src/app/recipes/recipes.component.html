@@ -1,27 +1,35 @@
-
 <div class="row">
-  <!--Left pane of the page-->
-  <div class="col-md-5">
+    <!--Left pane of the page-->
+    <div class="col-md-5">
 
-    <h6> Recipes Component</h6>
-    <h6> Left pane of the page Recipes Component </h6>
-    <app-recipe-list></app-recipe-list>
-  </div>
+        <!--<h6> Recipes Component</h6>-->
+        <h6> Left pane of the page Recipes Component </h6>
+        <app-recipe-list></app-recipe-list>
+    </div>
 
-  <!--Right pane of the page-->
-  <h6> Right pane of the page Recipes Component </h6>
-  <div class="col-md-7">
-<div class="jumbotron">
-    <!--<p><b>Please Select a Recipe From Recipe List  </b></p>-->
-    <app-recipe-detail
-      *ngIf="selectedRecipe; else NullText"
-      [recipe]="selectedRecipe">
-      </app-recipe-detail>
+    <!--Right pane of the page-->
+    <h6> Right pane of the page Recipes Component </h6>
+    <div class="col-md-7">
+        <div class="jumbotron">
+        <!--<p><b>Please Select a Recipe From Recipe List  </b></p>-->
+
+     <!--Routing hook for the child routing of the recipe
+     components -->
+       <router-outlet></router-outlet>
+
+        </div>
+    </div>
 </div>
 
-    <ng-template #NullText>
-      <p><b>Please Select a Recipe to show here!</b></p>
-    </ng-template>
-  </div>
-</div>
 
+<!--[Refactored code.]-->
+<!--<app-recipe-detail-->
+<!--*ngIf="selectedRecipe; else NullText"-->
+<!--[recipe]="selectedRecipe">-->
+
+<!--</app-recipe-detail>-->
+<!--</div>-->
+
+<!--<ng-template #NullText>-->
+<!--<p><b>Please Select a Recipe to show here!</b></p>-->
+<!--</ng-template>-->

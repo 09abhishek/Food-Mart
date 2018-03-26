@@ -1,28 +1,41 @@
 <div class="row">
-  <div class="col-xs-12">
-    <h6> Shopping Edit Component (Sub Component of Shopping List)</h6>
-    <form>
-      <div class="row">
-        <div class="col-sm-5 form-group">
-          <label for="name">Name </label>
-          <input type="text" id="name" class="form-control"
-          #nameInput>
-        </div>
-        <div class="col-sm-2 form-group ">
-          <label for="amount"> Amount </label>
-          <input type="number" id="amount" class="form-control"
-          #amountInput>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" (click)="onAddItem()">Add Item</button>
-          <button class="btn btn-danger" type="button" (click)="onDeleteItem()">Delete Item</button>
-          <button class="btn btn-primary" type="button">Clear</button>
+    <div class="col-xs-12">
+        <h6> Shopping Edit Component (Sub Component of Shopping List)</h6>
+        <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Name </label>
+                    <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            name="name"
+                            ngModel
+                            required
+                    >
+                </div>
+                <div class="col-sm-2 form-group ">
+                    <label for="amount"> Amount </label>
+                    <input
+                            type="number"
+                            id="amount"
+                            class="form-control"
+                            name="amount"
+                            ngModel
+                            required
+                            [pattern]="'[1-9]+[0-9]*$'"
+                    >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit" [disabled]="!f.valid">Add Item</button>
+                    <button class="btn btn-danger" type="button" (click)="onDeleteItem()">Delete Item</button>
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
 
-        </div>
-      </div>
-      <h6> Below :Shopping list Component</h6>
-    </form>
-  </div>
+                </div>
+            </div>
+            <h6> Below :Shopping list Component</h6>
+        </form>
+    </div>
 </div>

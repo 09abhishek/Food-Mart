@@ -16,15 +16,15 @@
   </div>
 </div>
 <br>
-<div class="=row">
+<div class="=row" target>
   <div
     class="btn-group" appDropdown>
     <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe<span class ="caret"></span>
     </button>
   <ul class="dropdown-menu">
     <li class="list-group-item"><a (click)="onAddToShoppingList()" style="cursor: pointer"> To Shopping List</a></li>
-    <li class="list-group-item"><a href="#"> Edit Recipe </a></li>
-    <li class="list-group-item"><a href="#"> Delete Recipe</a></li>
+    <li class="list-group-item"><a (click)="onEditRecipe()" style="cursor: pointer"> Edit Recipe </a></li>
+    <li class="list-group-item"><a (click)="onDeleteRecipe()" style="cursor: pointer"> Delete Recipe</a></li>
   </ul>
   </div>
 </div>
