@@ -2,35 +2,38 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Ingredient } from '../shared/ingredient.model';
-import {ShoppingListService} from "./shopping-list.service";
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
-  selector: 'app-shopping-list',
-  templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+    selector: 'app-shopping-list',
+    templateUrl: './shopping-list.component.html',
+    styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  ingredients: Ingredient[];
+
     private subscription: Subscription;
-  constructor(private slService: ShoppingListService) { }
+    ingredients: Ingredient[];
 
-  ngOnInit() {
-    this.ingredients=this.slService.getIngredients();
+    constructor(private slService: ShoppingListService) {
+    }
 
-this.subscription = this.slService.ingredientsChanged.subscribe((
-      ingredients: Ingredient[]) => {
-        this.ingredients= ingredients;
-      }
-    );
-  }
+    ngOnInit() {
+        this.ingredients = this.slService.getIngredients();
 
-    onEditItem(index: number){
-      // next is equivalent to emit as emittting to the listeners.
+        this.subscription = this.slService.ingredientsChanged
+            .subscribe((ingredients: Ingredient[]) => {
+                    this.ingredients = ingredients;
+                }
+            );
+    }
+
+    onEditItem(index: number) {
+        // next is equivalent to emit as emittting to the listeners.
         this.slService.startedEditing.next(index);
     }
 
-  ngOnDestroy(){
-      this.subscription.unsubscribe();
-  }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
 
 }
